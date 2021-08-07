@@ -4,7 +4,7 @@
   --white_A: rgba(255, 255, 255, 0.7);
   --white_A_Overlay: rgba(255, 255, 255, 0.3);
   --Teal_Lite: #b2d8d8;
-  --Teal_Lite_A: rgba(178, 216, 216, 0.9);
+  --Teal_Lite_A: rgba(178, 216, 216, 0.8);
   --Teal_2: #66b2b2;
   --Teal_2_A: rgba(102, 178, 178, 0.8);
   --Teal_3: #008080;
@@ -181,18 +181,35 @@ right: 2px;
 	left: 55px;
 	width: 95vw;
 	height: 90vh;
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
-	align-items: top;
 }
 .glass-card{
-	width: 300px;
-	height: 200px;
 	margin: 10px;
 	padding: 10px;
 	background: var(--Teal_GradeLite);
 	border-radius: 5px;
 	box-shadow: 0 3px 10px rgb(0 0 0 / 0.7);
 	backdrop-filter: blur(1px);    
+}
+
+.punch-card{
+	padding: 5px;
+	margin-top: 15px;
+	width: 50vw;
+	height: 86vh;
+	text-align: center;
+	color: var(--Teal_Dark);
+}
+.punch-card input[type=number]{
+	border: 2px solid var(--Teal_3);
+	padding: 3px;
+	margin: 3px;
+	color: var(--Teal_Dark);
+	border-radius: 5px;
+}
+.punch-card input[type=number]::-webkit-inner-spin-button, 
+.punch-card input[type=number]::-webkit-outer-spin-button { 
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	margin: 0; 
 }
