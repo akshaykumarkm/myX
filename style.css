@@ -8,8 +8,11 @@
   --Teal_2: #66b2b2;
   --Teal_2_A: rgba(102, 178, 178, 0.8);
   --Teal_3: #008080;
+  --Teal_3_A: rgba(0, 128, 128, 0.8);
   --Teal_4: #006666;
+  --Teal_4_A: rgba(0, 102, 102, 0.8);
   --Teal_Dark: #004c4c;
+  --Teal_Dark_A: rgba(0, 76, 76, 0.8);
   --Teal_Grade: linear-gradient(to bottom right, var(--Teal_3) , var(--Teal_Lite));
   --Teal_GradeLite: linear-gradient(to bottom right, var(--Teal_Lite_A) , var(--white_A));
 }
@@ -75,7 +78,7 @@ body{
 	top: 0;
 	left: 0;
 	overflow: hidden;
-	z-index: 11;
+	z-index: 12;
 	box-shadow: 0 3px 10px rgb(0 0 0 / 0.5);
 }
 .side-bar{
@@ -86,7 +89,7 @@ body{
 	left: 0;
 	top: 0;
 	display: block;
-	z-index: 11;
+	z-index: 12;
 }
 .side-bar ul{
 	margin-top: 10vh;
@@ -130,6 +133,7 @@ body{
 	justify-content: center;
 	align-items: center;
 	background: var(--white);
+	z-index: 11;
 }
 .intro-header{
 	width: 90vw;
@@ -139,23 +143,24 @@ body{
 	position: absolute;
 	top: 10px;
 	left: 85px;
-	z-index: 4;
+	z-index: 11;
 	background: var(--Teal_Grade);
 	box-shadow: 0 3px 10px rgb(0 0 0 / 0.5);
 }
 .user-glass-card{
-	width: 300px;
-	height: 200px;
+	width: 200px;
+	height: 400px;
 	margin: 10px;
 	padding: 10px;
 	background: var(--Teal_GradeLite);
 	border-radius: 5px;
-	box-shadow: 0 3px 10px rgb(0 0 0 / 0.7);
-	backdrop-filter: blur(1px); 
+	box-shadow: 0 4px 10px rgb(0 0 0 / 0.8)	;
+	backdrop-filter: blur(5px); 
 	position: absolute;
 	top: 60px;
-	right: 5px;
-	z-index: 9;
+	right: 0;
+	z-index: 11;
+	display: none;
 }
 .user-glass-card:after {
 content:'';
@@ -164,10 +169,10 @@ width: 0;
 border-width: 10px 10px 0px 10px;
 transform: rotate(180deg);
 border-style: solid;
-border-color: rgba(2,255,255,1) rgba(255,255,255,0) rgba(255,255,255,0) rgba(255,255,255,0);
+border-color: var(--Teal_2_A) rgba(255,255,255,0) rgba(255,255,255,0) rgba(255,255,255,0);
 position: absolute;
-top: -15px;
-right: -5px;
+top: -10px;
+right: 2px;
 }
 /* main contents */
 .content{
@@ -178,8 +183,8 @@ right: -5px;
 	height: 90vh;
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
-	align-items: center;
+	justify-content: flex-end;
+	align-items: top;
 }
 .glass-card{
 	width: 300px;

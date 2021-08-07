@@ -31,7 +31,7 @@
   <!-- floating round-->
  <div class="intro-header"> 
  
- <div class="intro-round"> <i class="fas fa-user-tie"></i></div><div class="user-glass-card">Hello </div></div>
+ <div class="intro-round" id="intro-round"> <i class="fas fa-user-tie"></i></div><div class="user-glass-card" id="user-glass-card">Hello </div></div>
  <!-- body content -->
  <section>
 	 <div class="content">
@@ -43,8 +43,11 @@
  <!-- script -->
  <script>
 	$(document).ready(function(){
+	
+	//Side bar controls
 		var togg = false;
 		$("#toggle").click(function(){
+			$("#user-glass-card").fadeOut();
 			if(togg == false){
 				if ($(window).width() < 600) {
 					$("#nav-labels").animate({'width': '200px'});
@@ -75,6 +78,31 @@
 			togg = false;
 			
 		});
+		
+		// Round user controls
+		var togg2 = false;
+		$("#intro-round").click(function(){
+		//first close side bar
+		$("#nav-labels").animate({'width': '50px'});
+			$(".nav-label").fadeOut();
+			$("#side-bar").css("color", "");
+			$("#toggle2").fadeOut();
+			$("#toggle").fadeIn();
+			$("#overlay").fadeOut();
+			togg = false;
+		//then do rest
+		if( togg2 == false){
+			$("#user-glass-card").
+			slideDown();
+			$("#overlay").fadeIn();
+			togg2 = true;
+			}else{
+			$("#user-glass-card").
+			slideUp();
+			$("#overlay").fadeOut();
+			togg2 = false;
+			}
+		})
 	});
  </script>
 </body>
