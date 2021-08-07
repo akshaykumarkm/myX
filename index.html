@@ -1,15 +1,81 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<title>title</title>
+	<title>Online Punching System V3</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<meta name="robots" content="index,follow" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
 	<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
 <body>
- <h2> Hi </h1>
+<div class="flex-wrap">
+ <!-- side bar-->
+ <div class="nav-labels" id="nav-labels"></div>
+ <div class="side-bar" id="sidebar">
+	<i class="fas fa-bars" id="toggle"></i>
+	<i class="fas fa-times" style="display: none" id="toggle2"></i>
+	<ul>
+		<br><br><br>
+		<li><i class="fas fa-sign-in-alt"></i><label class="nav-label">LogIn</label></li>
+		<li><i class="fas fa-sign-out-alt"></i><label class="nav-label">LogOut</label></li>
+		<li><i class="fas fa-user-plus"></i><label class="nav-label">Register</label></li>
+		<li><i class="fas fa-cash-register"></i><label class="nav-label">Punch</label></li>
+	</ul>
+ </div>
+ <div class="overlay" id="overlay"></div>
+  <!-- floating round-->
+ <div class="intro-header"> 
+ 
+ <div class="intro-round"> <i class="fas fa-user-tie"></i></div><div class="user-glass-card">Hello </div></div>
+ <!-- body content -->
+ <section>
+	 <div class="content">
+		<!-- Contents Goes Here -->
+		<div class="glass-card"> Hello</div>
+	</div>
+ </section>
+  </div>
+ <!-- script -->
+ <script>
+	$(document).ready(function(){
+		var togg = false;
+		$("#toggle").click(function(){
+			if(togg == false){
+				if ($(window).width() < 600) {
+					$("#nav-labels").animate({'width': '200px'});
+					$(".nav-label").toggle(300);
+					$("#side-bar").css("color", "");
+					$("#toggle").fadeOut();
+					$("#toggle2").fadeIn();
+					$("#overlay").fadeIn();
+					togg = true;
+					}else{
+					$("#nav-labels").animate({'width': '15vw'});
+					$(".nav-label").toggle(300);
+					$("#side-bar").css("color", "");
+					$("#toggle").fadeOut();
+					$("#toggle2").fadeIn();
+					$("#overlay").fadeIn();
+					togg = true;
+					}
+				}
+			});
+		$("#toggle2").click(function(){
+			$("#nav-labels").animate({'width': '50px'});
+			$(".nav-label").toggle(300);
+			$("#side-bar").css("color", "");
+			$("#toggle2").fadeOut();
+			$("#toggle").fadeIn();
+			$("#overlay").fadeOut();
+			togg = false;
+			
+		});
+	});
+ </script>
 </body>
 </html>
